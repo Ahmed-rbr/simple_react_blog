@@ -1,10 +1,12 @@
 import { useState } from "react";
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [isPending, setIsPending] = useState(false);
   const [author, setAuthor] = useState("Unknown");
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { title, body, author };
@@ -17,6 +19,8 @@ const Create = () => {
       .then(() => {
         console.log("new blog");
         setIsPending(false);
+
+history.push('/')
       })
       .catch((err) => {
         console.error("Error:", err);

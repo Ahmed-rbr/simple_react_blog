@@ -108,3 +108,11 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+
+.rr {
+  color: hsl(342, 87%, 78%);
+  font-weight: 600git init git add . git commit -m "Ready for deployment";
+}
+.rr:hover {
+  color: hsl(342, 87%, 38%);
+}
