@@ -103,3 +103,8 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
