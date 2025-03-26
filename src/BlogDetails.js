@@ -1,7 +1,4 @@
-import {
-  useHistory,
-  useParams,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
@@ -11,14 +8,21 @@ const BlogDetails = () => {
     data: blog,
     isPending,
     eroor,
-  } = useFetch("http://localhost:8000/blogs/" + id);
+  } = useFetch(
+    `https://blogapp-8a667-default-rtdb.firebaseio.com/blogs/${id}.json`
+  );
+
   const handleClick = () => {
-    fetch("http://localhost:8000/blogs/" + blog.id, {
-      method: "DELETE",
-    }).then(() => {
+    fetch(
+      `https://blogapp-8a667-default-rtdb.firebaseio.com/blogs/${id}.json`,
+      {
+        method: "DELETE",
+      }
+    ).then(() => {
       history.push("/");
     });
   };
+
   return (
     <div className="blog-details">
       {isPending && <div>Loading...</div>}

@@ -111,7 +111,7 @@ textarea:focus {
 
 .rr {
   color: hsl(342, 87%, 78%);
-  font-weight: 600git init git add . git commit -m "Ready for deployment";
+  font-weight: 600;
 }
 .rr:hover {
   color: hsl(342, 87%, 38%);

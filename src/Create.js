@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -11,7 +11,7 @@ const Create = () => {
     e.preventDefault();
     const blog = { title, body, author };
     setIsPending(true);
-    fetch("http://localhost:8000/blogs", {
+    fetch("https://blogapp-8a667-default-rtdb.firebaseio.com/blogs.json", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
@@ -20,7 +20,7 @@ const Create = () => {
         console.log("new blog");
         setIsPending(false);
 
-history.push('/')
+        history.push("/");
       })
       .catch((err) => {
         console.error("Error:", err);
