@@ -6,7 +6,7 @@ import BlogDetails from "./BlogDetails";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/simple_react_blog">
       <div className="App">
         <Navbar />
         <div className="content">
